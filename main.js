@@ -29,7 +29,8 @@ const postArr = [
         "userPostPhoto" : "https://i.picsum.photos/id/926/300/300.jpg?hmac=x4ZAWARrddK0vvdVlj8WFApg0-AkrVQjwYIxccsHHWU",
         "postData" : "2 weeks ago",
         "postText" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti natus sapiente necessitatibus molestias, assumenda quas explicabo eveniet maxime, et blanditiis sequi debitis. Tempore veritatis voluptatum ab, sequi explicabo quas dolorum.",
-        "postImg" : "https://i.picsum.photos/id/737/300/300.jpg?hmac=94eQ0-7BgWyrtUDzUZpTKyhkpATPLelT9Um_aq-q050",
+        "postImg" : "",
+        /* "postImg" : "https://i.picsum.photos/id/737/300/300.jpg?hmac=94eQ0-7BgWyrtUDzUZpTKyhkpATPLelT9Um_aq-q050", */
         "postButtonLike" : "Mi piace",
         "postLikeNum" : 78
     },
@@ -49,7 +50,8 @@ const postArr = [
         "userPostPhoto" : "https://i.picsum.photos/id/926/300/300.jpg?hmac=x4ZAWARrddK0vvdVlj8WFApg0-AkrVQjwYIxccsHHWU",
         "postData" : "3 weeks ago",
         "postText" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti natus sapiente necessitatibus molestias, assumenda quas explicabo eveniet maxime, et blanditiis sequi debitis. Tempore veritatis voluptatum ab, sequi explicabo quas dolorum.",
-        "postImg" : "https://i.picsum.photos/id/737/300/300.jpg?hmac=94eQ0-7BgWyrtUDzUZpTKyhkpATPLelT9Um_aq-q050",
+        "postImg" : "",
+        /* "postImg" : "https://i.picsum.photos/id/737/300/300.jpg?hmac=94eQ0-7BgWyrtUDzUZpTKyhkpATPLelT9Um_aq-q050", */
         "postButtonLike" : "Mi piace",
         "postLikeNum" : 45
     },
@@ -131,7 +133,92 @@ function stampa() {
         divContainer.innerHTML = postStamp;
     
     }
-    
+    /* if (i === 2 || i === 4) {
+
+        postStamp += `
+        <div class="post__header">
+            <div class="post-meta">
+
+                <div class="post-meta__icon">
+                    <img class="profile-pic" src="${userPostPhoto}">
+                </div>
+
+                <div class="post-meta__data">
+                    <div class="post-meta__author">${userPostName}</div>
+
+                    <div class="post-meta__time">${postData}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="post__text">${postText}</div>
+
+        <div class="post__footer">
+
+            <div class="likes js-likes">
+
+                <div class="likes__cta">
+
+                    <a class="like-button  js-like-button" data-postid="${i}">
+                            <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                            <span class="like-button__label">${postButtonLike}</span>
+                    </a>
+                </div>
+
+                <div class="likes__counter">
+                        Piace a <b id="like-counter-1" class="js-likes-counter">${postLikeNum}</b> persone
+                </div>
+            </div>
+        </div> 
+    `
+
+    } else {
+
+        postStamp += `
+        <div class="post__header">
+            <div class="post-meta">
+
+                <div class="post-meta__icon">
+                    <img class="profile-pic" src="${userPostPhoto}">
+                </div>
+
+                <div class="post-meta__data">
+                    <div class="post-meta__author">${userPostName}</div>
+
+                    <div class="post-meta__time">${postData}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="post__text">${postText}</div>
+
+        <div class="post__image"><img src="${postImg}">
+        </div>
+
+        <div class="post__footer">
+
+            <div class="likes js-likes">
+
+                <div class="likes__cta">
+
+                    <a class="like-button  js-like-button" data-postid="${i}">
+                            <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                            <span class="like-button__label">${postButtonLike}</span>
+                    </a>
+                </div>
+
+                <div class="likes__counter">
+                        Piace a <b id="like-counter-1" class="js-likes-counter">${postLikeNum}</b> persone
+                </div>
+            </div>
+        </div> 
+    `
+
+    }
+
+    divContainer.innerHTML = postStamp;
+
+} */
 
 
 }
