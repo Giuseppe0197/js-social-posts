@@ -86,90 +86,49 @@ function stampa() {
     
         const {userPostName, userPostPhoto, postData, postText, postImg, postButtonLike, postLikeNum} = postArr[i];
     
-        if (i === 2 || i === 4) {
-    
-            postStamp += `
-            <div class="post__header">
-                <div class="post-meta">
-    
-                    <div class="post-meta__icon">
-                        <img class="profile-pic" src="${userPostPhoto}">
-                    </div>
-    
-                    <div class="post-meta__data">
-                        <div class="post-meta__author">${userPostName}</div>
-    
-                        <div class="post-meta__time">${postData}</div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="post__text">${postText}</div>
-    
-            <div class="post__footer">
-    
-                <div class="likes js-likes">
-    
-                    <div class="likes__cta">
-    
-                        <a class="like-button  js-like-button" data-postid="${i}">
-                                <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
-                                <span class="like-button__label">${postButtonLike}</span>
-                        </a>
-                    </div>
-    
-                    <div class="likes__counter">
-                            Piace a <b id="like-counter-1" class="js-likes-counter">${postLikeNum}</b> persone
-                    </div>
-                </div>
-            </div> 
-        `
-    
-        } else {
-    
-            postStamp += `
-            <div class="post__header">
-                <div class="post-meta">
-    
-                    <div class="post-meta__icon">
-                        <img class="profile-pic" src="${userPostPhoto}">
-                    </div>
-    
-                    <div class="post-meta__data">
-                        <div class="post-meta__author">${userPostName}</div>
-    
-                        <div class="post-meta__time">${postData}</div>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="post__text">${postText}</div>
-    
-            <div class="post__image"><img src="${postImg}">
-            </div>
-    
-            <div class="post__footer">
-    
-                <div class="likes js-likes">
-    
-                    <div class="likes__cta">
-    
-                        <a class="like-button  js-like-button" data-postid="${i}">
-                                <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
-                                <span class="like-button__label">${postButtonLike}</span>
-                        </a>
-                    </div>
-    
-                    <div class="likes__counter">
-                            Piace a <b id="like-counter-1" class="js-likes-counter">${postLikeNum}</b> persone
-                    </div>
-                </div>
-            </div> 
-        `
-    
-        }
 
-        divContainer.innerHTML += postStamp;
+            postStamp += `
+            <div class="post__header">
+                <div class="post-meta">
+    
+                    <div class="post-meta__icon">
+                        <img class="profile-pic" src="${userPostPhoto}">
+                    </div>
+    
+                    <div class="post-meta__data">
+                        <div class="post-meta__author">${userPostName}</div>
+    
+                        <div class="post-meta__time">${postData}</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="post__text">${postText}</div>`;
+    
+            if (postImg) {
+                postStamp += `<div class="post__image"><img src="${postImg}"></div>`;
+            }
+
+            postStamp += `<div class="post__footer">
+    
+                <div class="likes js-likes">
+    
+                    <div class="likes__cta">
+    
+                        <a class="like-button  js-like-button" data-postid="${i}">
+                                <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                                <span class="like-button__label">${postButtonLike}</span>
+                        </a>
+                    </div>
+    
+                    <div class="likes__counter">
+                            Piace a <b id="like-counter-1" class="js-likes-counter">${postLikeNum}</b> persone
+                    </div>
+                </div>
+            </div> 
+        `
+
+        divContainer.innerHTML = postStamp;
     
     }
     
@@ -179,14 +138,9 @@ function stampa() {
 
 stampa()
 
-
 /* prendiamo il numero dei mi piace nell'array */
 
-/* let counter = postArr.map( (item) => item.postLikeNum); */
-
 let buttonForLike = document.querySelectorAll(".js-like-button");
-
-let counterLikes = document.querySelectorAll(".js-likes-counter");
 
 /* andiamo ad aggiungere il click al pulsante in modo che il contatore dei mi piace salga di uno */
 
@@ -198,7 +152,7 @@ for (let i = 0; i < buttonForLike.length; i++){
 
         const id = this.getAttribute("data-postid");
 
-        postArr[id].counterLikes++;
+        postArr[id].postLikeNum++;
 
         console.log(postArr[id]);
 
